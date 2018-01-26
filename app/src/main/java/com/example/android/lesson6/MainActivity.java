@@ -19,15 +19,46 @@ public class MainActivity extends AppCompatActivity {
     /**
      * This method is called when the order button is clicked.
      */
-    public void submitOrder(View view) {
-        display(1);
+
+    int quantity ;
+    public void increment(View view){
+
+        quantity = quantity+1 ;
+        display(quantity);
+
     }
+
+    public void decrement(View view){
+
+        quantity= quantity-1 ;
+        display(quantity);
+
+    }
+
+
+    public void price(View view){
+        int x= quantity*10 ;
+        priceDisplay(x);
+    }
+
+
+
+
+
 
     /**
      * This method displays the given quantity value on the screen.
      */
     private void display(int number) {
-        TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
+        TextView quantityTextView = (TextView) findViewById(R.id.textView);
         quantityTextView.setText("" + number);
     }
+
+    private void priceDisplay(int number) {
+        TextView priceTextView = (TextView) findViewById(R.id.textView2);
+        priceTextView.setText("" + number);
+    }
+
+
+
 }
